@@ -2,6 +2,9 @@ const inquirer=require ('inquirer');
 // const mysql=require('mysql');
 const mysql=require('mysql2');
 
+//required libraries
+
+//Connect to mysql server
 
 const dbConnection = mysql.createConnection(
     {
@@ -15,7 +18,7 @@ const dbConnection = mysql.createConnection(
 
         port: 3306
     }) ;
-    const questions = () => { 
+    const questions = () => {  //initial inquirer prompt
       return inquirer
         .prompt([
 
@@ -62,7 +65,7 @@ const dbConnection = mysql.createConnection(
 
       });
       
-      };
+      }; //view all departments t
       viewAllDepartments = () => {
         const query = "SELECT * FROM departments";
       
@@ -81,7 +84,7 @@ const dbConnection = mysql.createConnection(
           }
         });
       };
-
+//viewing all roles from table
       viewAllRoles = () => {
         console.log('Viewing all roles');
         const query = "SELECT * FROM role";
@@ -102,7 +105,7 @@ const dbConnection = mysql.createConnection(
         });
       };
 
-      
+     //viewing all emplloyees 
       viewAllEmployees = () => {
         console.log('Viewing all employees');
         const query = "SELECT * FROM employee";
@@ -123,7 +126,7 @@ const dbConnection = mysql.createConnection(
         });
       };
 
-      
+      //add department prompt
       addDepartment = () => {
         inquirer
           .prompt([
@@ -152,7 +155,8 @@ const dbConnection = mysql.createConnection(
             });
           });
       };
-      
+      //add role prompt
+      // name, salary, and department for the role and that role is added to the database
       addRole = () => {
         inquirer
           .prompt([
@@ -163,22 +167,27 @@ const dbConnection = mysql.createConnection(
             },
             {
               type: "input",
+              message: "Enter the salary for the role:",
+              name: "salary",
+            },
+            {
+              type: "input",
               message: "Enter the department id for the role:",
               name: "department_id",
             },
           ])
           .then((answers) => {
-            const { title, department_id } = answers;
+            const { title, salary, department_id } = answers;
       
             // SQL query to insert a new department into the 'departments' table
-            const query = "INSERT INTO role (title, department_id) VALUES (?,?)";
+            const query = "INSERT INTO role (title, salary, department_id) VALUES (?,?, ?)";
       
             // Execute the query with the user-provided department name
-            dbConnection.query(query, [title, department_id], (err, results) => {
+            dbConnection.query(query, [title, salary, department_id], (err, results) => {
               if (err) {
                 console.error("Error adding role: " + err.message);
               } else {
-                console.log(`Role '${title} ${department_id}' added successfully.`);
+                console.log(`Role '${title} ${salary} ${department_id}' added successfully.`);
               };
       
               // Return to the main menu
@@ -187,7 +196,7 @@ const dbConnection = mysql.createConnection(
           });
       };
 
-      
+      //add employee 
       addEmployee = () => {
         inquirer
           .prompt([
@@ -206,17 +215,22 @@ const dbConnection = mysql.createConnection(
               message: "Enter the role id of the employee:",
               name: "role_id",
             },
+            {
+              type: "input",
+              message: "Enter the employee's manager",
+              name: "manager",
+            },
             
             
           ])
           .then((answers) => {
-            const { first_name, last_name, role_id } = answers;
+            const { first_name, last_name, role_id, manager } = answers;
       
-            // SQL query to insert a new department into the 'departments' table
-            const query = "INSERT INTO employee (first_name, last_name, role_id) VALUES (?, ?, ?)";
+            // SQL query to insert a new employee into the 'employee' table
+            const query = "INSERT INTO employee (first_name, last_name, role_id, manager) VALUES (?, ?, ?, ?)";
       
-            // Execute the query with the user-provided department name
-            dbConnection.query(query, [first_name, last_name, role_id], (err, results) => {
+            // Execute the query with the user-provided employee first name, last name, and role id
+            dbConnection.query(query, [first_name, last_name, role_id, manager], (err, results) => {
               if (err) {
                 console.error("Error adding employee: " + err.message);
               } else {
@@ -228,7 +242,7 @@ const dbConnection = mysql.createConnection(
             });
           });
       };
-
+//update employee role, use UPDATE
       updateRole = () => {
         inquirer
             .prompt([

@@ -1,4 +1,3 @@
-
 DROP DATABASE IF EXISTS tracker_db;
 CREATE DATABASE tracker_db;
 USE tracker_db;
@@ -22,6 +21,7 @@ CREATE TABLE employee(
     first_name VARCHAR(30),
     last_name VARCHAR(30),
     role_id INT NOT NULL, 
+    manager VARCHAR(30),
     PRIMARY KEY (id)
 );
 SELECT * FROM departments;
