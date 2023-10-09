@@ -10,8 +10,8 @@
   ## Table of Contents
   * [Installation](#Installation)
   * [Usage](#Usage)
-  * [Built_With] (#Built_With)
-  * [Walkthrough_Video] (#Walkthrough_Video)
+  * [Built_With] (#BuiltWith)
+  * [Walkthrough_Video] (#WalkthroughVideo)
   * [Questions](#Questions)
 
   ## Installation
