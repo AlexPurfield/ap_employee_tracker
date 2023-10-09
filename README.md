@@ -17,12 +17,12 @@
   ## Installation
   What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
-  Clone Project in GitHub, Run npm i to retrieve all necessary packages.
+  Clone Project in GitHub, Run npm i to retrieve all necessary packages (Node.js, inquirer, and MySql)
 
   ## Usage
   Provide instructions and examples for use. Include screenshots as needed.
 
-  After packages are installed, run node server.js in the terminal to start the inquirer prompts.
+  After packages are installed and database is connected, run node server.js in the terminal to start the inquirer prompts.
 
   ## Built With
   * Node.js
