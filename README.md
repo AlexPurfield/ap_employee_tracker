@@ -32,7 +32,7 @@
   * GitHub
 
   # Walkthrough Video
-  <iframe width="640" height="360" src="https://drive.google.com/file/d/1Djo3LLO16Z97-7hC8lDP2U0IHV5n3P2M/preview"></iframe>
+<iframe src="https://drive.google.com/file/d/1Djo3LLO16Z97-7hC8lDP2U0IHV5n3P2M/preview" width="640" height="480"></iframe>
 
 
 
