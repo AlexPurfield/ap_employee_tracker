@@ -8,11 +8,11 @@
   The employee tracker is a command line application that allows the user to manage their employees and company. This application utilizes inquirer to prompt the user in the cli as well as mysql to interact with the database.
 
   ## Table of Contents
-  * [Installation](#Installation)
-  * [Usage](#Usage)
-  * [Built_With] (#BuiltWith)
-  * [Walkthrough_Video] (#WalkthroughVideo)
-  * [Questions](#Questions)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Built With](#built-with)
+  * [Walkthrough Video](#walkthrough-video)
+  * [Questions](#questions)
 
   ## Installation
   What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
